@@ -16,7 +16,7 @@ function List({listItem, checkChange, itemLeft, setFilter, clearCompleted, filte
         <ul className="list">
             {listItem && listItem.filter(filtro[filterTask]).map((item, index) => (
               <div key={index} className="list-item">
-                <button className={item.state ? "checklist-div-checked" :  "checklist-div"} onClick={() => checkChange(index)}><img className="check-img" src="/images/icon-check.svg" alt="" /></button>
+                <button className={item.state ? "checklist-div-checked" :  "checklist-div"} onClick={() => checkChange(index)}><img className="check-img" src={item.state ? "/images/icon-check.svg" :  ""} alt="" /></button>
                 <li className={item.state ? "list-text-checked" : ""} key={item.index}>{ item.texto }</li>
                 <button className="list-item-button_delete" onClick={() => clearItem(index)}>X</button>
               </div>

@@ -6,7 +6,7 @@ import List from './List';
 
 
 
-function Header(props) {
+function Header() {
     
     const [listItemText, setListItemText] = useState("")
     const [listItem, setListItem] = useState([]);
@@ -14,22 +14,27 @@ function Header(props) {
     const [filter, setFilter] = useState("all");
     const [theme, setTheme] = useState('moon');
 
+
     const inputChange = (e) => {
-        setListItemText(e.target.value.charAt(0).toUpperCase() + e.target.value.slice(1))
+            setListItemText(e.target.value.charAt(0).toUpperCase() + e.target.value.slice(1));
     }
 
     const addItem = (e) =>{
         e.preventDefault();
         const newItem = {texto: listItemText, position: listItem.length + 1, state: false}; 
-        setListItem([...listItem, newItem]);
-        e.target.reset();
+        if (listItemText !== "") {
+            setListItem([...listItem, newItem]);
+            e.target.reset();
+            setListItemText("");
+        }
+
     }
 
     const checkChange = (index) =>{
         const change = [...listItem];
         change[index].state = !change[index].state;
         setListItem(change);
-     
+        
     }
 
     const clearItem = (index) =>{
@@ -48,7 +53,7 @@ function Header(props) {
         setListItem(completedItems);
     }
 
-    const newTheme = theme === 'sun' ? 'moon' : 'sun';
+    
     const handleButtonClick = () => {
     const newTheme = theme === 'sun' ? 'moon' : 'sun';
     setTheme(newTheme);
