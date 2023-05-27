@@ -8,14 +8,51 @@
   background-color: hsl(0, 0%, 98%);
 }
 
-.moon-theme{
-  background-color: hsl(235, 21%, 11%);
-}
 
 .header-content{
   display: flex;
   position: relative;
   justify-content: center;
+  background-color: hsl(0, 0%, 198%);
+}
+
+.header-image-background{
+  display: flex;
+  position: relative;
+  justify-content: center;
+}
+
+body.moon{
+  background-color: hsl(235, 21%, 11%);
+}
+
+body.moon div.header-image-background{
+
+  background-color: hsl(235, 21%, 11%);
+}
+
+body.moon input.header-input{
+  background-color:hsl(235, 24%, 19%);
+  color: hsl(234, 11%, 52%)
+}
+
+body.moon div.list-item {
+  background-color:hsl(235, 24%, 19%);
+  color: hsl(234, 11%, 52%)
+}
+
+body.moon div.list-div{
+  background-color:hsl(235, 24%, 19%);
+  color: hsl(234, 11%, 52%)
+}
+
+body.sun div.list-div{
+  background-color: hsl(0, 0%, 198%);
+}
+
+body.sun div.header-image-background{
+
+  background-color: hsl(0, 0%, 98%);
 }
 
 .header-content__items{
@@ -52,6 +89,10 @@ div > .header-moon_icon{
 
 }
 
+div > .header-moon_icon:hover{
+  transform: scale(1.2);
+}
+
 div > .header-span{
   position: relative;
   color: white;
@@ -72,11 +113,25 @@ div > .header-span{
 
 .header-input-button{
   position: absolute;
-  left: 1.5rem;
+  left: 1.25rem;
   top: 105px;
-  background-color: hsl(236, 33%, 92%);
+  background-color: hsla(131, 97%, 30%, 0.321);
   border: none;
   border-radius: 100%;
+}
+
+.header-input-button:hover{
+  transform: scale(1.1);
+  background-color: hsl(131, 97%, 30%);
+
+}
+
+.add-icon{
+  position: relative;
+  top: 0.25rem;
+  font-size: 20px;
+  font-weight: 700;
+  color: rgb(255, 255, 255);
 }
 
 
@@ -113,6 +168,11 @@ div > .header-span{
     left: 1.5rem;
 }
 
+.checklist-div:hover{
+  transform: scale(1.2);
+  background: linear-gradient(to bottom right, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+}
+
 .checklist-div-checked{
   background: linear-gradient(to bottom right, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
   position: absolute;
@@ -124,6 +184,12 @@ div > .header-span{
   left: 1.5rem;
 }
 
+.checklist-div-checked:hover{
+  transform: scale(1.2);
+  background: rgba(128, 128, 128, 0.132);
+
+}
+
 .list{
   list-style: none;
   padding: 0px;
@@ -133,6 +199,22 @@ div > .header-span{
   border-radius: 100%;
   top: 1rem;
   left: 1.5rem;
+}
+
+.list-item-button_delete{
+  position: absolute;
+  right: 1.5rem;
+  top: 1.2rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: rgba(128, 128, 128, 0.477);
+  font-size: 12px;
+}
+
+.list-item-button_delete:hover{
+  font-size: 16px;
+  color: rgb(202, 3, 3);
 }
 
 
@@ -150,4 +232,66 @@ div > .header-span{
   text-decoration: line-through;
 }
 
+.list-filters{
+  display: flex;
+  justify-content: space-between;
+  padding-left: 1vw;
+  padding-right: 1vw;
+  position: relative;
+  top: 10px;
+  min-height: 40px;
+}
+
+.list-filters-item__left{
+  align-self: center;
+  color: hsl(236, 9%, 61%);
+}
+
+.list-filters__button{
+  background: none;
+  border: none;
+  color: hsl(236, 9%, 61%);
+}
+
+.list-filters__button:hover{
+  transform: scale(1.1);
+}
+
+.list-filters-center__buttons{
+  display: flex;
+  flex-direction: row;
+}
+
+.list-filters-clear_completed_div{
+  position: relative;
+  text-align: center;
+  padding-bottom: .75rem;
+  background: linear-gradient(to right, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.clear-completed{
+  position: relative;
+  color: white;
+  top: 0.5rem;
+}
+
+@media (max-width: 1189px){
+  .list-filters-center__buttons{
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 890px){
+  .header-input{
+    border: 1px solid rgba(128, 128, 128, 0.201);
+  }
+}
+
+@media (max-width: 973px){
+  .header-content__items{
+    min-width: 275px;
+  }
+}
 
