@@ -8,7 +8,7 @@ function Input({addItem, inputChange,}) {
         <form action="" onSubmit={addItem} >
           <input type="text" className='header-input' name="item" onChange={inputChange} placeholder='Create a new todo...'/>
           <button className='header-input-button' type='submit'>
-            <span class="material-symbols-outlined add-icon">add</span>
+            <span class="add-icon">+</span>
           </button>
         </form>
     </div>
